@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Login from './components/LoginSignup/login';
 import SignUp from './components/LoginSignup/signup';
-
+import Dashboard from './components/LoginSignup/dashboard'; 
 
 class App extends Component {
   render() {
@@ -13,8 +13,9 @@ class App extends Component {
           <Routes>
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<SignUp />} />
-            {/* You can set a default route (e.g., '/') if needed */}
+            {/* Default route (e.g., '/') */}
             <Route path='/' element={<Login />} />
+            <Route path='/dashboard' element={<Dashboard />} /> 
           </Routes>
         </BrowserRouter>
       </div>
@@ -23,4 +24,3 @@ class App extends Component {
 }
 
 export default App;
-

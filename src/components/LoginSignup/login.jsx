@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './login.css'; // Import the CSS file for styling
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 import axios from 'axios';
 
 const Login = () => {
@@ -8,6 +8,10 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
+
+
+
+    const navigate = useNavigate(); // Initialize useNavigate for redirection
 
     // Handle form submission
     const handleSubmit = (event) => {
@@ -20,6 +24,8 @@ const Login = () => {
         axios.post('http://localhost:3001/login', { email, password })
             .then((response) => {
                 console.log('Login successful:', response.data);
+                navigate('/dashboard'); // Redirects to the '/dashboard' route (or any other page)
+
                 // You can handle successful login here (e.g., store user token, redirect to dashboard, etc.)
             })
             .catch((err) => {
