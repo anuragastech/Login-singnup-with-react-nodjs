@@ -28,7 +28,7 @@ const Signup = () => {
         };
 
         // Send POST request to the backend
-        axios.post('http://localhost:3001/signup', signupData)
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup`, signupData)
             .then((response) => {
                 console.log('Signup successful:', response.data);
                 // Handle successful signup (e.g., redirect to login or dashboard)
