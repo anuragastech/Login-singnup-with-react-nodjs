@@ -9,9 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist" 
+    "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://anuragastech.github.io/Login-singnup-with-react-nodjs>", 
+  "homepage": "https://anuragastech.github.io/Login-signup-with-react-nodjs", 
   "dependencies": {
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
