@@ -11,11 +11,10 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<SignUp />} />
-            {/* Default route (e.g., '/') */}
+            <Route path='/login' element={<Login/>} />
+            <Route path='/signup' element={<SignUp/>} />
             <Route path='/' element={<Login />} />
-            <Route path='/dashboard' element={<Dashboard />} /> 
+            <Route path='/dashboard' element={<Dashboard/>} /> 
           </Routes>
         </BrowserRouter>
       </div>

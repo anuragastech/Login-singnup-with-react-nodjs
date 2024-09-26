@@ -8,30 +8,31 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-    
+
+
+
     const navigate = useNavigate(); // Initialize useNavigate for redirection
 
     // Handle form submission
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault(); // Prevent default form submission behavior
-        setError(null); // Reset any previous errors
 
-        try {
-            // Send login data to backend
-            const response = await axios.post('https://reactmy-node-server-ng3uc85ut-anurags-projects-4c990b3d.vercel.app/login', { email, password });
-            console.log('Login successful:', response.data);
-            navigate('/dashboard'); // Redirects to the '/dashboard' route (or any other page)
+        // Reset any previous errors
+        setError(null);
 
-            // You can handle successful login here (e.g., store user token, etc.)
-        } catch (err) {
-            // Handle error responses from the backend
-            if (err.response && err.response.data) {
-                setError(err.response.data.message || 'Login failed. Please check your credentials.');
-            } else {
-                setError('Network error. Please try again later.');
-            }
-            console.error('Error:', err);
-        }
+        // Send login data to backend
+        axios.post('https://reactmy-node-server-ng3uc85ut-anurags-projects-4c990b3d.vercel.app/login', { email, password })
+            .then((response) => {
+                console.log('Login successful:', response.data);
+                navigate('/dashboard'); // Redirects to the '/dashboard' route (or any other page)
+
+                // You can handle successful login here (e.g., store user token, redirect to dashboard, etc.)
+            })
+            .catch((err) => {
+                setError('Login failed. Please check your credentials.');
+                console.error('Error:', err);
+            });
+            
     };
 
     return (
