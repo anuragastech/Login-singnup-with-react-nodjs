@@ -3,10 +3,10 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Login-singnup-with-react-nodjs/', // GitHub Pages base URL
+  base: '/Login-singnup-with-react-nodjs/',
   build: {
     rollupOptions: {
-      // Any additional Rollup configuration
+      external: ['/assets/index-5Aj7_fpE.js'], // Externalize the asset
     }
   }
 })
