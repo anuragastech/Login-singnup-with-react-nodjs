@@ -21,7 +21,7 @@ const Login = () => {
         setError(null);
 
         // Send login data to backend
-        axios.post('https://reactmy-node-server-ng3uc85ut-anurags-projects-4c990b3d.vercel.app/login', { email, password })
+        axios.post('http://localhost:3001/login', { email, password })
             .then((response) => {
                 console.log('Login successful:', response.data);
                 navigate('/dashboard'); // Redirects to the '/dashboard' route (or any other page)

@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Login-singnup-with-react-nodjs/' // GitHub repo name
+  base: '/Login-singnup-with-react-nodjs/', // Required for GitHub Pages
 })
